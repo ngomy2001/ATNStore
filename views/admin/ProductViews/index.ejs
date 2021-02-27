@@ -1,0 +1,100 @@
+<%- include('../template/header.ejs') %>
+    <div id="layoutSidenav">
+        <%- include('../template/side-nav.ejs') %>
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid">
+                        <h1 class="mt-4">Products</h1>
+                        <!-- <ol class="breadcrumb mb-4">
+                            <li class="breadcrumb-item"><a href="index.html">Dashboard</a></li>
+                            <li class="breadcrumb-item active">Tables</li>
+                        </ol> -->
+
+                        <div class="card mb-4">
+                            <div class="card-header">
+
+                                <a href="/admin/product/create" class="btn btn-success active" role="button"
+                                    aria-pressed="true"><i class="fas fa-plus mr-1"></i>
+                                    New</a>
+
+                                <% if(typeof successMessage !=='undefined' ) {%>
+                                    <div class="alert alert-success" role="alert">
+                                        <%= successMessage %>
+                                    </div>
+                                    <%} %>
+                            </div>
+                            <div class="card-body">
+                                <div class="table-responsive">
+                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                                        <thead>
+                                            <tr>
+                                                <th>ID</th>
+                                                <th>Name</th>
+                                                <th>Description</th>
+                                                <th>Price</th>
+                                                <th>Quantity in stock</th>
+                                                <th>More</th>
+
+                                                <!-- <th>More</th> -->
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+
+                                            <%if(typeof products !=='undefined' ) { products.forEach((product)=> { %>
+                                                <tr>
+                                                    <td>
+                                                        <%= product.dataValues.id%>
+                                                    </td>
+                                                    <td>
+                                                        <%= product.dataValues.name %>
+                                                    </td>
+                                                    <td>
+                                                        <%= product.dataValues.description %>
+                                                    </td>
+                                                    <td>
+                                                        <%= product.dataValues.price %>
+                                                    </td>
+                                                    <td>
+                                                        <%= product.dataValues.qtyInStock %>
+                                                    </td>
+                                                    <td>
+                                                        <a href="/admin/product/<%= product.dataValues.id%>"
+                                                            class="btn btn-danger active" role="button"
+                                                            aria-pressed="true"><i class="fas fa-trash-alt mr-1"></i>
+                                                            Delete</a>
+                                                    </td>
+
+                                                </tr>
+                                                <% })} %>
+
+
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+                <footer class="py-4 bg-light mt-auto">
+                    <div class="container-fluid">
+                        <div class="d-flex align-items-center justify-content-between small">
+                            <div class="text-muted">Copyright &copy; Your Website 2020</div>
+                            <div>
+                                <a href="#">Privacy Policy</a>
+                                &middot;
+                                <a href="#">Terms &amp; Conditions</a>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+    </div>
+    </body>
+    <%- include('../template/footer.ejs') %>
+        <!-- <script>
+            $(document).ready(function () {
+                $('#dataTable').DataTable();
+            });
+
+        </script> -->
