@@ -22,6 +22,7 @@ const sequelize = new Sequelize({
   password: dbPassword,
   host: dbHost,
   port: 5432,
+  ssl: true,
   dialect: "postgres",
   dialectOptions: {
     ssl: {
