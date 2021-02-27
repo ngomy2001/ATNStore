@@ -16,14 +16,19 @@ const {
 } = connection;
 
 /* Init sequelize instance */
-const sequelize = new Sequelize('postgres://kzzwfwehwglxtn:bacd51945a4d3d2bae04e440560d8dd98233a3025258b1a5a71604c39866e9c9@ec2-18-207-95-219.compute-1.amazonaws.com:5432/daahuh3p26sc2f', {
-  dialect: 'postgres',
+const sequelize = new Sequelize({
+  database: dbName,
+  username: dbUsername,
+  password: dbPassword,
+  host: dbHost,
+  port: 5432,
+  dialect: "postgres",
   dialectOptions: {
     ssl: {
       require: true,
-      rejectUnauthorized: false // <<<<<<< YOU NEED THIS
+      rejectUnauthorized: false
     }
-  },
+  }
 });
 
 /* Test database connection */
