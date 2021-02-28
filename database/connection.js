@@ -20,6 +20,6 @@ module.exports = {
     host: "ec2-54-87-34-201.compute-1.amazonaws.com",
     dialect: "postgres",
     ssl: true,
-    url: 'postgres://khrhmbscaqiwyi:d46a2d5fcacc09168d07fd08d0a967c268aa4a754b477411cfc795311394c70b@ec2-54-87-34-201.compute-1.amazonaws.com:5432/dtg1p7o6631g7?ssl=true'
+    url: 'postgres://khrhmbscaqiwyi:d46a2d5fcacc09168d07fd08d0a967c268aa4a754b477411cfc795311394c70b@ec2-54-87-34-201.compute-1.amazonaws.com:5432/dtg1p7o6631g7'
   },
 };
