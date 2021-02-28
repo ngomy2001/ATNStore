@@ -5,7 +5,7 @@ const Sequelize = require("sequelize");
 //const nodeEnv = process.env.NODE_ENV ? process.env.NODE_ENV : "test";
 
 /* Import connection */
-const connection = require("./connection")['production'];
+const connection = require("./connection")['development'];
 
 /* Get db connection info */
 const {
