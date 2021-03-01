@@ -1,5 +1,6 @@
 const models = require('../database/models');
 const Employee = models.Employee;
+const Office = models.Office;
 const loginPage = (req, res, next) => {
     try {
         return res.render("admin/login");
@@ -15,18 +16,22 @@ const handleLogin = async (req, res, next) => {
     };
     try {
         const employee = await Employee.findOne({
-            where: req.body,
-            attributes: ['id', 'name', 'officeID', 'role']
+            attributes: ['id', 'name', 'officeID', 'role'],
+            include: Office,
+            where: req.body
         });
 
         // If the user was not found that means the credentials was wrong.
         if (!employee) {
             return res.render('admin/login', { errorMessage: "Wrong email or password" });
         }
-
         req.session.employee = employee;
-        return res.render('admin/', { employee: employee });
 
+        if (employee.Office.name == 'ATN') {
+            return res.render('admin/ATN/', { employee: employee });
+        }
+
+        return res.render('admin/Store/', { employee: employee });
     } catch (error) {
         console.log(error);
     }

@@ -6,6 +6,8 @@ const AuthController = require('../controllers/AuthController');
 
 /* GET dashboard page. */
 router.get('/', function (req, res, next) {
+    console.log('hi mn');
+    console.log(req.session);
     res.render('admin/');
 });
 
