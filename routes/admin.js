@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 // const OrderController = require('../controllers/OrderController');
 const ProductController = require('../controllers/ProductController');
-const AuthController = require('../controllers/AuthController');
+//const AuthController = require('../controllers/AuthController');
 
 /* GET dashboard page. */
 router.get('/', function (req, res, next) {

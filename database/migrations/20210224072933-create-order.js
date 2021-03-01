@@ -11,8 +11,14 @@ module.exports = {
       employeeID: {
         type: Sequelize.INTEGER
       },
-      customerID: {
+      productID: {
         type: Sequelize.INTEGER
+      },
+      quantity: {
+        type: Sequelize.INTEGER
+      },
+      price: {
+        type: Sequelize.DOUBLE
       },
       createdAt: {
         allowNull: false,

@@ -11,9 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Order.hasMany(models.Order_detail);
-      Order.belongsTo(models.Customer);
       Order.belongsTo(models.Employee);
+      Order.hasOne(models.Product);
     }
   };
   Order.init({
@@ -26,8 +25,14 @@ module.exports = (sequelize, DataTypes) => {
     employeeID: {
       type: DataTypes.INTEGER
     },
-    customerID: {
+    productID: {
       type: DataTypes.INTEGER
+    },
+    quantity: {
+      type: DataTypes.INTEGER
+    },
+    price: {
+      type: DataTypes.DOUBLE
     },
     createdAt: {
       allowNull: false,
