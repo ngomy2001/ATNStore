@@ -28,10 +28,9 @@ const handleLogin = async (req, res, next) => {
         req.session.employee = employee;
 
         if (employee.Office.name == 'ATN') {
-            return res.render('admin/ATN/', { employee: employee });
+            return res.redirect('/admin');
         }
-
-        return res.render('admin/Store/', { employee: employee });
+        return res.redirect('/admin/order/');
     } catch (error) {
         console.log(error);
     }

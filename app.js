@@ -26,7 +26,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(session({
   secret: "colamthimoicoan",
   resave: true,
-  saveUninitialized: true
+  saveUninitialized: true,
+  secure: true
+  // _expires: false,
+  // originalMaxAge: 365 * 24 * 60 * 60 * 1000
 }));
 
 app.use('/', indexRouter);

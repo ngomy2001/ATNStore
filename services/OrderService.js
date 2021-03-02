@@ -1,9 +1,9 @@
-const models = require("../database/models");
+// const models = require("../database/models");
 
-const getAllOrders = () => {
-    return models.Order.findAll();
-}
+// const getAllOrders = () => {
+//     return models.Order.findAll();
+// }
 
-module.exports = {
-    getAllOrders,
-}
+// module.exports = {
+//     getAllOrders,
+// }
